@@ -2,6 +2,7 @@ import React from 'react';
 import CityForm from './Form.js';
 import axios from 'axios';
 import LatLon from './LatLon.js';
+import Image from 'react-bootstrap/Image';
 
 
 class Main extends React.Component {
@@ -42,6 +43,7 @@ class Main extends React.Component {
       </p>
       <CityForm searchCity={this.searchCity} getLocation={this.getLocation}/>
       <LatLon location={this.state.location}/>
+      <Image src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONKEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}/>
       </>
     )
   }
